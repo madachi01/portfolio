@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linux Command Line Basics</title>
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+
+    <body>
+
+        <!-- ==========================
+                    NAVBAR
+        ========================== -->
+        <div class="topnav" id="myTopnav">
+            <a href="../../index.html">Home</a>
+            <a href="../../about.html">About</a>
+            <div class="dropdown active">
+                <button class="dropbtn">Projects
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.html" class="active">Automation & Scripting</a>
+                    <a href="../vm-systems/index.html">Virtual Labs & Systems</a>
+                    <a href="../network/index.html">Networking & Security</a>
+                    <a href="../docs/index.html">Documentation & Guides</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <main>
+
+            <!-- Title -->
+            <section>
+                <h1 class="underline">Linux Command Line Basics</h1>
+                <img src="../../images/ubuntu-desktop.webp" alt="Automated Windows Install" title="Automated Windows Install" class="intro-img"/>
+                <p>This guide provides a practical overview of fundamental Linux commands, file navigation, permissions, and system management. It is designed for IT support, help desk, and junior system administrator roles where command-line proficiency is essential.</p>
+            </section>
+
+            <setion>
+                <h2>Understanding the Linux Filesystem Hierarchy</h2>
+                <p>Understanding how Linux organizes its files and directories is essential before learning command-line navigation.Linux follows a standardized filesystem layout defined by the Filesystem Hierarchy Standard (FHS). This structure ensures consistency across distributions and helps users know where system files, configuration files, and user data are stored.</p>
+            </setion>
+
+            <section>
+                <h2>Directory Tree Diagram</h2>
+                <div class="tree-container">
+                    <pre><code>
+                        /
+                        ├── home/
+                        │   └── &lt;username&gt;/
+                        ├── root/
+                        ├── etc/
+                        ├── bin/
+                        ├── sbin/
+                        ├── usr/
+                        │   ├── bin/
+                        │   ├── sbin/
+                        │   └── share/
+                        ├── var/
+                        │   ├── log/
+                        │   └── cache/
+                        ├── opt/
+                        ├── tmp/
+                        ├── mnt/
+                        └── media/
+                    </code></pre>
+                </div>
+                <p>This directory tree illustrates the Linux filesystem hierarchy, showing key directories and their relationships for system organization and navigation.</p>
+            </setion>
+
+            <section>
+                <h2 class="underline">Key Directories and Their Roles</h2>
+                <p>Linux organizes files into a structured hierarchy, where each directory has a specific purpose. Understanding the key directories helps navigate, manage, and maintain the system efficiently.</p>
+
+                <div class="directory-grid">
+                    <div class="directory-item"><strong>/etc</strong> — System configuration</div>
+                    <div class="directory-item"><strong>/home</strong> — User home directories</div>
+                    <div class="directory-item"><strong>/var</strong> — Logs & dynamic system data</div>
+                    <div class="directory-item"><strong>/usr</strong> — Applications, binaries, libraries</div>
+                    <div class="directory-item"><strong>/bin</strong> — Essential user commands</div>
+                    <div class="directory-item"><strong>/sbin</strong> — System administration commands</div>
+                    <div class="directory-item"><strong>/lib</strong> — Shared libraries</div>
+                    <div class="directory-item"><strong>/tmp</strong> — Temporary files</div>
+                    <div class="directory-item"><strong>/opt</strong> — Optional/third-party software</div>
+                    <div class="directory-item"><strong>/root</strong> — Root user’s home</div>
+                    <div class="directory-item"><strong>/mnt</strong> — Mounted filesystems</div>
+                    <div class="directory-item"><strong>/media</strong> — Removable media
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Linux Command Line Basics</h2>
+                <p>Working in the terminal allows you to interact directly with the system, performing tasks quickly and precisely. These are some of the many commands used within the Linux command line.</p>
+                
+                <div class="phases-grid">
+                    <!-- File & Directory -->
+                    <div class="phase-card">
+                        <h3>File & Directory Commands</h3>
+                        <div class="command-row">
+                            <span class="cmd"><strong>ls</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">List files in a directory</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>cd</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Change directory</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>pwd</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Show current directory path</span>
+                        </div>
+                    </div>
+
+                    <!-- File Viewing & Editing -->
+                    <div class="phase-card">
+                        <h3>File Viewing & Editing</h3>
+                        <div class="command-row">
+                            <span class="cmd"><strong>cat</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Display file contents</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>nano</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Edit a file in terminal</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>less</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">View file page by page</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>touch</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Create a blank file</span>
+                        </div>
+                    </div>
+
+                    <!-- Process Management -->
+                    <div class="phase-card">
+                        <h3>Process Management</h3>
+                        <div class="command-row">
+                            <span class="cmd"><strong>ps</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">List running processes</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>top</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Interactive process viewer</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>kill</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Terminate a process</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>htop</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Interactive process monitor (if installed)</span>
+                        </div>
+                    </div>
+
+                    <!-- Networking -->
+                    <div class="phase-card">
+                        <h3>Networking</h3>
+                        <div class="command-row">
+                            <span class="cmd"><strong>ping</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Test connectivity to a host</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>ifconfig</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Show network interfaces</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>ssh</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Connect to remote systems</span>
+                        </div>
+                        <div class="command-row">
+                            <span class="cmd"><strong>curl</strong></span>
+                            <span class="arrow">→</span>
+                            <span class="desc">Transfer data from URLs</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Summary -->
+            <section>
+                <h2 class="underline">Summary</h2>
+                <p>This guide covers essential Linux commands and workflows that IT support and help desk technicians use daily. Mastery of these fundamentals prepares you for troubleshooting, system navigation, and eventually more advanced system administration tasks.</p>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Matthew Adachi</p>
+        </footer>
+
+    </body>
+</html>

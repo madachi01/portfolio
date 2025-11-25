@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Streamline Windows deployments using customized autounattend.xml configurations.">
+        <title>Automating Windows Installs</title>
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    </head>
+    <body>
+
+    <!-- ==========================
+                NAVBAR
+    ========================== -->
+    <div class="topnav" id="myTopnav">
+        <a href="../../index.html">Home</a>
+        <a href="../../about.html">About</a>
+        <div class="dropdown">
+            <button class="dropbtn">Projects
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="../automation/index.html">Automation & Scripting</a>
+                <a href="../vm-systems/index.html">Virtual Labs & Systems</a>
+                <a href="../network/index.html">Networking & Security</a>
+                <a href="index.html" class="active">Documentation & Guides</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <!-- ==========================
+                MAIN CONTENT
+    ========================== -->
+    <main>
+        <!-- Page Title -->
+        <h1 class="underline">Automating Windows Installs with autounattend.xml</h1>
+
+        <!-- Intro Section -->
+        <section>
+            <img src="../../images/autounattend/autounattend-intro.webp" alt="Automated Windows Install" title="Automated Windows Install" class="intro-img"/>
+            <p>
+                This guide demonstrates how to automate Windows installations using an <strong>autounattend.xml</strong> file. 
+                By leveraging Windows Setup’s automation capabilities, IT professionals can standardize installations, save time, 
+                and maintain consistency across multiple systems without manual intervention.
+            </p>
+        </section>
+
+        <!-- Windows Setup Phases-->
+        <section>
+            <h2>Windows Setup Phases</h2>
+            <div class="phases-grid">
+                <div class="phase-card">
+                    <img src="../../images/autounattend/windowsPE.webp" alt="Windows PE" class="glightbox phase-img" data-gallery="pic1">
+                    <p><strong>WindowsPE</strong> - The pre-installation environment. Handles disk partitioning, selecting image index, adding drivers, and setting language, system architecture, and product key.</p>
+                </div>
+                <div class="phase-card">
+                    <img src="../../images/autounattend/offlineServicing.webp" alt="Offline Servicing" class="glightbox phase-img" data-gallery="pic2">
+                    <p><strong>offlineServicing</strong> - Applies updates, drivers, and language packs before the first boot to ensure the system is current and secure.</p>
+                </div>
+                <div class="phase-card">
+                    <img src="../../images/autounattend/specialize.webp" alt="Specialize" class="glightbox phase-img" data-gallery="pic3">
+                    <p><strong>specialize</strong> - Configures the machine’s identity, including computer name, domain join, time zone, network settings, and additional drivers.</p>
+                </div>
+                <div class="phase-card">
+                    <img src="../../images/autounattend/oobeSystem.webp" alt="OOBE System" class="glightbox phase-img" data-gallery="pic4">
+                    <p><strong>oobeSystem</strong> - Manages the out-of-box experience: user creation, privacy settings, network configuration, and optional autologin setup.</p>
+                </div>
+                <div class="phase-card">
+                    <img src="../../images/autounattend/auditSystem.webp" alt="Audit System" class="glightbox phase-img" data-gallery="pic5">
+                    <p><strong>auditSystem / auditUser</strong> - Used for mass-deployed golden images or heavy customization. Rarely used in standard installations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Components & Values -->
+        <section>
+            <h2>Key Components & Values</h2>
+            <p>
+                Each autounattend.xml file contains essential components that define the installation behavior. 
+                Examples include Microsoft-Windows-Setup, Microsoft-Windows-Shell-Setup, 
+                and Microsoft-Windows-Deployment. Values set within these components control critical variables such as 
+                ComputerName, UserAccounts, DiskConfiguration, ImageInstall, and ProductKey.
+            </p>
+            <p>
+                Proper structure and capitalization are crucial; even minor errors in components, phases, attributes, or namespaces can break the automated installation.
+            </p>
+        </section>
+
+        <!-- Best Practices -->
+        <section>
+            <h2>Best Practices</h2>
+            <ul class="bullets">
+                <li>Ensure each phase only contains settings applicable to that stage.</li>
+                <li>Double-check XML syntax, namespaces, and component names for accuracy.</li>
+                <li>Test installations in a virtual environment before deploying on physical hardware.</li>
+                <li>Document your configuration to simplify future updates and troubleshooting.</li>
+            </ul>
+        </section>
+
+        <!-- Reflection / Takeaways -->
+        <section>
+            <h2>Reflection</h2>
+            <p>
+                Automating Windows installations with <strong>autounattend.xml</strong> files showcases advanced IT deployment skills. 
+                It reduces human error, accelerates system provisioning, and demonstrates expertise in configuring enterprise-grade environments efficiently.
+            </p>
+        </section>
+    </main>
+
+    <!-- ==========================
+                FOOTER
+    ========================== -->
+    <footer>
+        <p>&copy; 2025 Matthew Adachi. All rights reserved.</p>
+    </footer>
+
+    <!-- ==========================
+                SCRIPTS
+    ========================== -->
+    <script src="script.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            zoomable: true,  // pinch or scroll to zoom
+            openEffect: 'fade', 
+            closeEffect: 'fade'
+        });
+    </script>   
+
+    </body>
+</html>

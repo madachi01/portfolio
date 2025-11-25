@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Simulating an enterprise-grade network environment within a personal homelab.">
+        <title>Active Directory in VMware</title>
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    </head>
+    <body>
+
+        <!-- ==========================
+                    NAVBAR
+        ========================== -->
+        <div class="topnav" id="myTopnav">
+            <a href="../../index.html">Home</a>
+            <a href="../../about.html">About</a>
+            <div class="dropdown">
+                <button class="dropbtn">Projects <i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="../automation/index.html">Automation & Scripting</a>
+                    <a href="index.html">Virtual Labs & Systems</a>
+                    <a href="../network/index.html">Networking & Security</a>
+                    <a href="../docs/index.html">Documentation & Guides</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <!-- ==========================
+                    MAIN CONTENT
+        ========================== -->
+        <main>
+
+            <!-- Project Title -->
+            <h1 class="underline">Active Directory in VMware</h1>
+
+            <!-- Intro / Setup Preview -->
+            <section>
+                <img src="../../images/ad-vmware/Setup Preview.webp" alt="Setup Preview" class="intro-img"/>
+                <p>
+                    Simulating an enterprise-grade network environment within a personal homelab, this project brings together Windows Server 2025 and multiple client OSs to recreate a fully functional Active Directory domain — complete with users, groups, policies, and automation.
+                </p>
+            </section>
+
+            <!-- Overview -->
+            <section>
+                <h2>Overview</h2>
+                <div class="overview-content">
+                    <p>
+                        Developed to explore real-world systems administration in a flexible environment, this lab mirrors modern IT infrastructure. I configured domains, managed GPOs, automated tasks, and experimented with cross-OS compatibility, file sharing, and integration with tools like Jamf and Ansible.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Network Design -->
+            <section>
+                <h2>Network Design</h2>
+                <div class="network-image">
+                    <img src="../../images/ad-vmware/Network Topology.webp" alt="Network Topology" class="glightbox" data-gallery="pic1"/>
+                </div>
+                <p>
+                    The network connects three segments — <strong>ISP (orange)</strong>, <strong>home (green)</strong>, and <strong>virtual lab (blue)</strong> — each with defined roles and protocols, simulating enterprise-grade segmentation for secure and efficient communication.
+                </p>
+            </section>
+
+            <!-- Core Features & Takeaways -->
+            <section>
+                <h2>Core Features & Takeaways</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="../../images/ad-vmware/Snapshot Manager.webp" alt="Snapshot Manager" class="glightbox feature-img" data-gallery="pic2">
+                        <p><strong>VM Snapshots</strong> – Instant recovery points for safe experimentation, allowing fast restoration from errors or failures.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="../../images/ad-vmware/Clone VM Wizard.webp" alt="Clone VM Wizard" class="glightbox feature-img" data-gallery="pic3">
+                        <p><strong>VM Cloning</strong> – Rapidly deploy additional client machines for testing larger-scale environments.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="../../images/ad-vmware/Hypervisor Hardware Allocation.webp" alt="Hypervisor Hardware Allocation" class="glightbox feature-img" data-gallery="pic4">
+                        <p><strong>Hardware Efficiency</strong> – A single host replaces multiple physical systems, maximizing flexibility while minimizing hardware requirements.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reflection -->
+            <section>
+                <h2>Reflection</h2>
+                <div class="reflection-content">
+                    <p>
+                        Building this environment strengthened my technical skills and ability to troubleshoot effectively. Each test, error, and solution enhanced my understanding of structure, reliability, and controlled experimentation. The lab continues to evolve as I explore new tools and refine automation workflows.
+                    </p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ==========================
+                    FOOTER
+        ========================== -->
+        <footer>
+            <p>&copy; 2025 Matthew Adachi. All rights reserved.</p>
+        </footer>
+
+        <!-- ==========================
+                    SCRIPTS
+        ========================== -->
+        <script src="script.js"></script>
+        <script>
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                zoomable: true,  // pinch or scroll to zoom
+                openEffect: 'fade', 
+                closeEffect: 'fade'
+            });
+        </script>
+
+    </body>
+</html>
